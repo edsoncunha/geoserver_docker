@@ -73,7 +73,7 @@ RUN wget -c http://downloads.sourceforge.net/project/geoserver/GeoServer/$GEOSER
     rm ~/geoserver-importer-plugin.zip
     
 # Get backup and restore plugin
-RUN wget -c http://ares.boundlessgeo.com/geoserver/2.10.x/community-latest/geoserver-2.10-SNAPSHOT-backup-restore-plugin.zip -0 ~/geoserver-backup-restore-plugin.zip &&\
+RUN wget -c http://ares.boundlessgeo.com/geoserver/2.10.x/community-latest/geoserver-2.10-SNAPSHOT-backup-restore-plugin.zip -O ~/geoserver-backup-restore-plugin.zip &&\
     unzip -o ~/geoserver-backup-restore-plugin.zip -d /opt/geoserver/webapps/geoserver/WEB-INF/lib/ && \
     rm ~/geoserver-backup-restore-plugin.zip
 
