@@ -77,6 +77,11 @@ RUN wget -c http://ares.boundlessgeo.com/geoserver/2.10.x/community-latest/geose
     unzip -o ~/geoserver-backup-restore-plugin.zip -d /opt/geoserver/webapps/geoserver/WEB-INF/lib/ && \
     rm ~/geoserver-backup-restore-plugin.zip
 
+# Get the ImagePyramid plugin
+RUN wget -c http://downloads.sourceforge.net/project/geoserver/GeoServer/$GEOSERVER_VERSION/extensions/geoserver-$GEOSERVER_VERSION-pyramid-plugin.zip -O ~/geoserver-pyramid-plugin.zip &&\
+    unzip -o ~/geoserver-pyramid-plugin.zip -d /opt/geoserver/webapps/geoserver/WEB-INF/lib/ && \
+    rm ~/geoserver-pyramid-plugin.zip
+    
 # Replace GDAL Java bindings
 RUN rm -rf $GEOSERVER_HOME/webapps/geoserver/WEB-INF/lib/imageio-ext-gdal-bindings-1.9.2.jar
 RUN cp /usr/share/java/gdal.jar $GEOSERVER_HOME/webapps/geoserver/WEB-INF/lib/gdal.jar
