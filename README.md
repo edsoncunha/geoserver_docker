@@ -5,5 +5,6 @@
   * OGR
   * GDAL
   * Image Pyramid
+  * WPS
   * Printing
   * Backup and restore
