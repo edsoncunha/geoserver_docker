@@ -2,9 +2,10 @@
 
 * Ubuntu Trusty
 * Geoserver 2.10.2 with the following plugins:
-  * OGR
+  * Backup and restore
   * GDAL
   * Image Pyramid
-  * WPS
+  * OGR
   * Printing
-  * Backup and restore
+  * WPS
+  * YSLD

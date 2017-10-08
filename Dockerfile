@@ -85,7 +85,12 @@ RUN wget -c http://downloads.sourceforge.net/project/geoserver/GeoServer/$GEOSER
 # Get the WPS plugin
 RUN wget -c http://downloads.sourceforge.net/project/geoserver/GeoServer/$GEOSERVER_VERSION/extensions/geoserver-$GEOSERVER_VERSION-wps-plugin.zip -O ~/geoserver-wps-plugin.zip &&\
     unzip -o ~/geoserver-wps-plugin.zip -d /opt/geoserver/webapps/geoserver/WEB-INF/lib/ && \
-    rm ~/geoserver-wps-plugin.zip    
+    rm ~/geoserver-wps-plugin.zip 
+    
+# Get the ysld styling plugin
+RUN wget -c http://downloads.sourceforge.net/project/geoserver/GeoServer/$GEOSERVER_VERSION/extensions/geoserver-$GEOSERVER_VERSION-ysld-plugin.zip -O ~/geoserver-ysld-plugin.zip &&\
+    unzip -o ~/geoserver-ysld-plugin.zip -d /opt/geoserver/webapps/geoserver/WEB-INF/lib/ && \
+    rm ~/geoserver-ysld-plugin.zip
     
 # Replace GDAL Java bindings
 RUN rm -rf $GEOSERVER_HOME/webapps/geoserver/WEB-INF/lib/imageio-ext-gdal-bindings-1.9.2.jar
